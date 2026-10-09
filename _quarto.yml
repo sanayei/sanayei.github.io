@@ -10,6 +10,7 @@ website:
   site-url: https://sanayei.github.io
   description: "Trustworthy LLM evaluation. 11 years shipping production ML. PhD, Operations Research."
   favicon: assets/favicon.svg
+  image: assets/photo.jpg
   open-graph: true
   twitter-card:
     creator: "@SanayeiAmir"
