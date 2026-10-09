@@ -10,8 +10,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import check_blocklist  # noqa: E402
 
 
-def run(root: Path, blocklist: Path) -> subprocess.CompletedProcess:
-    return subprocess.run([sys.executable, str(SCRIPT), "--root", str(root), "--blocklist", str(blocklist)],
+def run(root: Path, blocklist: Path, *extra: str) -> subprocess.CompletedProcess:
+    return subprocess.run([sys.executable, str(SCRIPT), "--root", str(root), "--blocklist", str(blocklist), *extra],
                           capture_output=True, text=True)
 
 
@@ -54,6 +54,17 @@ class BlocklistTests(unittest.TestCase):
             (self.site / d).mkdir()
             (self.site / d / "x.md").write_text("Acme Corp\n")
         self.assertEqual(run(self.site, self.bl).returncode, 0)
+
+    def test_allowlisted_term_passes_only_in_its_file(self):
+        allow = self.dir / "allow.txt"
+        allow.write_text("# resume-level mentions\nabout.qmd: Acme Corp\n")
+        (self.site / "about.qmd").write_text("Data Scientist at Acme Corp.\n")
+        self.assertEqual(run(self.site, self.bl, "--allow", str(allow)).returncode, 0)
+        (self.site / "essay.qmd").write_text("Lessons from Acme Corp.\n")
+        r = run(self.site, self.bl, "--allow", str(allow))
+        self.assertEqual(r.returncode, 1)
+        self.assertIn("essay.qmd:1: Acme Corp", r.stdout)
+        self.assertNotIn("about.qmd", r.stdout)
 
     def test_missing_blocklist_exits_2(self):
         r = run(self.site, self.dir / "nope.yaml")

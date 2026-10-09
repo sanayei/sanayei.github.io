@@ -1,0 +1,5 @@
+# Résumé-level employer mentions allowed on these pages only (same facts as LinkedIn).
+# Format: <path relative to repo root>: <term>. Essays and notes are never listed here.
+index.qmd: First American
+about.qmd: First American
+about.qmd: title-automation

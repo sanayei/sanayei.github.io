@@ -3,6 +3,9 @@
 
 The blocklist is private (employer names, internal terms, unpublished paper
 titles) and lives outside this repo. Runs as a git pre-push hook; never in CI.
+Résumé-level employer mentions are allowed per file through an allowlist
+(`scripts/blocklist_allow.txt`, lines of `path: term`); everything else,
+including every essay and note, stays fully guarded.
 Exit codes: 0 clean, 1 matches found, 2 blocklist missing or empty.
 """
 import argparse
@@ -13,6 +16,7 @@ from pathlib import Path
 DEFAULT_BLOCKLIST = Path.home() / "projects/content-engine/config/blocklist.yaml"
 SUFFIXES = {".qmd", ".md", ".yml", ".yaml", ".bib"}
 SKIP_DIRS = {"_site", "_freeze", ".git", ".quarto", "__pycache__"}
+DEFAULT_ALLOW = Path(__file__).resolve().parent / "blocklist_allow.txt"
 
 
 def load_terms(path: Path) -> list[str]:
@@ -24,6 +28,17 @@ def load_terms(path: Path) -> list[str]:
             if term:
                 terms.append(term)
     return terms
+
+
+def load_allow(path: Path) -> set[tuple[str, str]]:
+    """Return {(relative path, lowercased term)} pairs that may appear."""
+    allowed = set()
+    if path.is_file():
+        for line in path.read_text().splitlines():
+            if line.strip() and not line.lstrip().startswith("#") and ":" in line:
+                rel, term = line.split(":", 1)
+                allowed.add((rel.strip(), term.strip().lower()))
+    return allowed
 
 
 def scan(root: Path, terms: list[str]) -> list[tuple[Path, int, str]]:
@@ -45,6 +60,7 @@ def main() -> int:
     ap.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     ap.add_argument("--blocklist", type=Path,
                     default=Path(os.environ.get("BLOCKLIST_PATH", DEFAULT_BLOCKLIST)))
+    ap.add_argument("--allow", type=Path, default=DEFAULT_ALLOW)
     args = ap.parse_args()
     if not args.blocklist.is_file():
         print(f"blocklist not found: {args.blocklist} (set BLOCKLIST_PATH)", file=sys.stderr)
@@ -53,7 +69,8 @@ def main() -> int:
     if not terms:
         print(f"blocklist has no terms: {args.blocklist}", file=sys.stderr)
         return 2
-    hits = scan(args.root, terms)
+    allowed = load_allow(args.allow)
+    hits = [h for h in scan(args.root, terms) if (h[0].as_posix(), h[2].lower()) not in allowed]
     for path, n, term in hits:
         print(f"{path}:{n}: {term}")
     if hits:
