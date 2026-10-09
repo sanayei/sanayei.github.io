@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: _site
+
+execute:
+  freeze: auto
+
+website:
+  title: "Amir Sanayei"
+  site-url: https://sanayei.github.io
+  description: "Trustworthy LLM evaluation. 11 years shipping production ML. PhD, Operations Research."
+  favicon: assets/favicon.svg
+  open-graph: true
+  twitter-card:
+    creator: "@SanayeiAmir"
+  navbar:
+    left:
+      - href: about.qmd
+        text: About
+      - href: research.qmd
+        text: Research
+      - href: projects.qmd
+        text: Projects
+      - href: writing/index.qmd
+        text: Writing
+    right:
+      - icon: github
+        href: https://github.com/sanayei
+        aria-label: GitHub
+      - icon: twitter-x
+        href: https://x.com/SanayeiAmir
+        aria-label: X
+      - icon: linkedin
+        href: https://www.linkedin.com/in/sanayei
+        aria-label: LinkedIn
+  page-footer:
+    center: "© 2026 Amir Sanayei · [RSS](/writing/index.xml)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles/light.scss]
+      dark: [cosmo, styles/dark.scss]
+    css: styles/custom.css
+    toc: false
+    smooth-scroll: false
