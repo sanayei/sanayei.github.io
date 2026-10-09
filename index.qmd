@@ -1,5 +1,33 @@
 ---
 title: "Amir Sanayei"
+description: "Trustworthy LLM evaluation. 11 years shipping production ML. PhD, Operations Research."
+image: assets/photo.jpg
+listing:
+  - id: latest
+    contents: "writing/*/index.qmd"
+    sort: "date desc"
+    type: table
+    max-items: 3
+    fields: [date, title, categories]
+    sort-ui: false
+    filter-ui: false
 ---
 
-Site under construction.
+I work on making LLM evaluation trustworthy: knowing which model is actually better, and when its output can be trusted, when the labels, judges, and budgets behind the answer are imperfect.
+
+For eleven years I've shipped machine learning to production at First American, AWS, and Western Digital. I have a PhD in operations research. [More about me →](about.qmd)
+
+## Latest writing
+
+::: {#latest}
+:::
+
+[All writing →](writing/index.qmd)
+
+## Selected projects
+
+- [**aria**](https://github.com/sanayei/aria): a local-first AI assistant that asks for human approval before risky actions.
+- [**FlowForge**](https://github.com/sanayei/FlowForge): a modular, distributed document-processing pipeline on AWS SageMaker.
+- [**claude-grove**](https://github.com/sanayei/claude-grove): keeps long-running Claude Code sessions alive and organised on a remote machine.
+
+[All projects →](projects.qmd)
