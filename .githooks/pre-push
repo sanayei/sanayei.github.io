@@ -1,0 +1,3 @@
+#!/bin/sh
+# Block pushes that contain private blocklist terms. See scripts/check_blocklist.py.
+exec python3 "$(git rev-parse --show-toplevel)/scripts/check_blocklist.py"
