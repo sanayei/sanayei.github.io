@@ -1,0 +1,17 @@
+---
+title: "Entry title"
+date: 2026-01-01
+description: "One sentence shown in the listing and in link previews."
+categories: [essay]   # or [note]
+draft: true           # remove when Amir approves the final text
+# bibliography: refs.bib   # uncomment for citations
+---
+
+<!-- Notes: 300-800 words. End with: "Originally posted on [X](URL)" or "[LinkedIn](URL)". -->
+
+Opening paragraph.
+
+```{python}
+#| echo: false
+# Python cells run locally on `quarto render`; results are frozen in _freeze/.
+```

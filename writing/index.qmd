@@ -1,0 +1,15 @@
+---
+title: "Writing"
+description: "Essays and notes on LLM evaluation, statistics, and production ML."
+listing:
+  contents: "*/index.qmd"
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  feed: true
+  fields: [date, title, description, categories, reading-time]
+---
+
+**Essays** are long-form pieces. **Notes** are shorter takes, often expanded from a post on [X](https://x.com/SanayeiAmir) or [LinkedIn](https://www.linkedin.com/in/sanayei). Use the categories to filter. [RSS](index.xml)
