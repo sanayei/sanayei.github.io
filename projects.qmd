@@ -1,0 +1,20 @@
+---
+title: "Projects"
+description: "Open-source tools and experiments."
+---
+
+## aria
+
+A local-first AI assistant that asks for human approval before it takes a risky action. It's an experiment in agents that know when to ask, which is the same question as my research, applied to actions instead of labels. [Repository](https://github.com/sanayei/aria)
+
+## FlowForge
+
+A modular, distributed document-processing pipeline on AWS SageMaker: ingestion, processing, and deployment as composable stages. It shows how I build ML systems to run in production, not just in a notebook. [Repository](https://github.com/sanayei/FlowForge)
+
+## claude-grove
+
+Keeps Claude Code sessions alive in tmux on an always-on machine and shows them as one tree, with hook-driven status and desktop notifications. A small, tested, stdlib-only Python tool I use every day. [Repository](https://github.com/sanayei/claude-grove)
+
+## PyCraft
+
+Core data science and machine learning algorithms implemented from scratch with Python and NumPy. [Repository](https://github.com/sanayei/PyCraft)

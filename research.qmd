@@ -1,0 +1,25 @@
+---
+title: "Research"
+description: "Statistical foundations for AI-generated ground truth and LLM evaluation."
+---
+
+My research asks when an LLM evaluation can be trusted, when the labels, judges, and budgets behind it are imperfect. All of it uses public datasets.
+
+## Current topics
+
+- **AI-generated ground truth.** When several LLMs label the data, which label errors actually change which model wins, and which are harmless.
+- **Evaluation budgets.** Whether to spend a fixed budget on more test items, more human labels, or more reruns, by separating human label disagreement from model non-determinism.
+- **Guarantees for evaluation.** Statistical certificates that a model comparison still holds when the labels behind it are imperfect.
+
+LLM-as-a-judge is a recurring thread.
+
+## Preprints
+
+Listed here as they appear on arXiv.
+
+## Earlier publications
+
+- Sarkar, J., Peterson, C., & Sanayei, A. (2018). Machine-learned assessment and prediction of robust solid state storage system reliability physics. *2018 IEEE International Reliability Physics Symposium (IRPS)*. [doi:10.1109/irps.2018.8353565](https://doi.org/10.1109/irps.2018.8353565)
+- Sanayei, A., Mousavi, S. F., & Yazdankhah, A. (2010). Group decision making process for supplier selection with VIKOR under fuzzy environment. *Expert Systems with Applications*. [doi:10.1016/j.eswa.2009.04.063](https://doi.org/10.1016/j.eswa.2009.04.063)
+- Saremi, M., Mousavi, S. F., & Sanayei, A. (2009). TQM consultant selection in SMEs with TOPSIS under fuzzy environment. *Expert Systems with Applications*. [doi:10.1016/j.eswa.2008.01.034](https://doi.org/10.1016/j.eswa.2008.01.034)
+- Sanayei, A., Mousavi, S. F., Abdi, M. R., & Mohaghar, A. (2008). An integrated group decision-making process for supplier selection and order allocation using multi-attribute utility theory and linear programming. *Journal of the Franklin Institute*. [doi:10.1016/j.jfranklin.2008.03.005](https://doi.org/10.1016/j.jfranklin.2008.03.005)
