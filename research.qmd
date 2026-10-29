@@ -19,6 +19,7 @@ Listed here as they appear on arXiv.
 
 ## Earlier publications
 
+- Sarkar, J., Peterson, C., & Sanayei, A. (2018). Machine-learned assessment and prediction of robust solid state storage system reliability physics. *2018 IEEE International Reliability Physics Symposium (IRPS)*. [doi:10.1109/irps.2018.8353565](https://doi.org/10.1109/irps.2018.8353565)
 - Sanayei, A., Mousavi, S. F., & Yazdankhah, A. (2010). Group decision making process for supplier selection with VIKOR under fuzzy environment. *Expert Systems with Applications*. [doi:10.1016/j.eswa.2009.04.063](https://doi.org/10.1016/j.eswa.2009.04.063)
 - Saremi, M., Mousavi, S. F., & Sanayei, A. (2009). TQM consultant selection in SMEs with TOPSIS under fuzzy environment. *Expert Systems with Applications*. [doi:10.1016/j.eswa.2008.01.034](https://doi.org/10.1016/j.eswa.2008.01.034)
 - Sanayei, A., Mousavi, S. F., Abdi, M. R., & Mohaghar, A. (2008). An integrated group decision-making process for supplier selection and order allocation using multi-attribute utility theory and linear programming. *Journal of the Franklin Institute*. [doi:10.1016/j.jfranklin.2008.03.005](https://doi.org/10.1016/j.jfranklin.2008.03.005)
