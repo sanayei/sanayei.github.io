@@ -22,8 +22,6 @@ website:
         text: Research
       - href: projects.qmd
         text: Projects
-      - href: writing/index.qmd
-        text: Writing
     right:
       - icon: github
         href: https://github.com/sanayei
@@ -35,7 +33,7 @@ website:
         href: https://www.linkedin.com/in/sanayei
         aria-label: LinkedIn
   page-footer:
-    center: "© 2026 Amir Sanayei · [RSS](/writing/index.xml)"
+    center: "© 2026 Amir Sanayei"
 
 format:
   html:
